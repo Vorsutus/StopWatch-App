@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SWProject.SWProject">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label  Text="Stopwatch App"
+                    HorizontalOptions="Center"
+                    FontSize="40"
+                    FontAttributes="Bold, Italic" />
+
+            <Frame BackgroundColor= "#D2D2D2" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="StartAndExpand"
+                   Margin="0,30">
+
+                <StackLayout>
+                    <Label  x:Name = "TimeLabel"
+                            FontSize = "50"
+                            TextColor = "Black"
+                            HorizontalOptions = "Center"
+                            VerticalOptions = "Start"
+                            Text ="00:00:00.00"/>
+
+                    <StackLayout Orientation="Horizontal"
+                                 VerticalOptions="StartAndExpand">
+                        
+                        <StackLayout.Resources>
+                            <ResourceDictionary>
+                                <Style TargetType="Button">
+                                    <Setter Property="TextColor" Value="White"/>
+                                    <Setter Property="BackgroundColor" Value="Gray"/>
+                                    <Setter Property="FontSize" Value="Medium"/>
+                                </Style>
+                            </ResourceDictionary>
+                        </StackLayout.Resources>
+
+                        <Button Text="Play"
+                                Clicked="Start_Clicked"/>
+                        <Button Text="Stop"
+                                Clicked="Stop_Clicked"/>
+                        <Button Text="Reset"
+                                Clicked="Reset_Clicked"/>
+
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
